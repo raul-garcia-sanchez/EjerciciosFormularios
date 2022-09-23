@@ -6,32 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Selectors</title>
 </head>
-<body>
+
+<?php
+    if (isset($_GET['skinfile'])){
+        if ($_GET['skinfile'] == "vermell"){
+            echo "<body style='background-color:red'>";
+        }
+        else if ($_GET['skinfile'] == "blau"){
+            echo "<body style='background-color:blue'>";
+        }
+        else if ($_GET['skinfile'] == "verd"){
+            echo "<body style='background-color:green'>";
+        }
+        else{
+            echo "<body>";
+        }
+    }
+    ?>
+
 <form>
 
 	<select name="skinfile">
-		<option value="vermell">VERMELL</option>
-		<option value="blau">BLAU</option>
-		<option value="verd">VERD</option>
+		<option <?php if (isset($_GET['skinfile'])) if($_GET['skinfile'] == 'vermell') echo 'selected'?> value="vermell">VERMELL</option>
+		<option <?php if (isset($_GET['skinfile'])) if($_GET['skinfile'] == 'blau') echo 'selected'?> value="blau">BLAU</option>
+		<option <?php if (isset($_GET['skinfile'])) if($_GET['skinfile'] == 'verd') echo 'selected'?> value="verd">VERD</option>
     </select>
 	<br/>
 	<input type="submit" />
 </form>
 
-    <?php
-    if (isset($_GET['skinfile'])){
-        if ($_GET['skinfile'] == "vermell"){
-            echo "<body style='background-color:red'></body>";
-        }
-        else if ($_GET['skinfile'] == "blau"){
-            echo "<body style='background-color:blue'></body>";
-        }
-        else if ($_GET['skinfile'] == "verd"){
-            echo "<body style='background-color:green'></body>";
-        }
-    }
     
-    ?>
     
 </body>
 </html>
