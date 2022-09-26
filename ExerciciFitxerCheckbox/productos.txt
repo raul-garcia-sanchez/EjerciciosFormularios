@@ -1,4 +1,4 @@
-Coca Cola
-Fanta de Naranja
-Fanta de Limon
+CocaCola
+Fanta
+Agua
 Aquarius
